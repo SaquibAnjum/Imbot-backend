@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const connectDB = async () => {
     try {
         // Connect to MongoDB using mongoose with a connection string
-        await mongoose.connect("mongodb+srv://shahareyar2003:VaPPtk7FEqG5Un4I@cluster0.jvhep.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
+        await mongoose.connect(`${process.env.MONGO_URI}`);
         console.log("MongoDB connected"); // Log a success message if connected
     } catch (error) {
         console.log(`Error: ${error.message}`); // Log error message if connection fails
